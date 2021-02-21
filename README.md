@@ -1,6 +1,6 @@
 # SoPekocko
 
-1 - Présentation
+#titre 1 - *Présentation*
 
 SoPekocko est un projet de la formation développeur web Openclassrooms.
 
