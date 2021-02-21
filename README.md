@@ -27,8 +27,8 @@ Pour la partie backend:
 
   - ouvrir un terminal
   - naviguer jusqu'au dossier backend
-  - exécuter la commande: npm install
-  - exécuter la commande: nodemon server
+  - exécuter la commande: `npm install`
+  - exécuter la commande: `nodemon server`
 
 Le serveur écoute le port http://localhost:3000
 
@@ -36,8 +36,8 @@ Pour la partie frontend:
 
   - ouvrir un terminal
   - naviguer jusqu'au dossier frontend
-  - exécuter la commande: npm install
-  - exécuter la commande: ng serve
+  - exécuter la commande: `npm install`
+  - exécuter la commande: `ng serve`
   - sur votre navigateur, se rendre à l'adresse http://localhost:4200
 
 Vous pouvez maintenant utiliser les fonctionnalités de l'application web Piquante !
