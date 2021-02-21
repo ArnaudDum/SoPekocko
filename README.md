@@ -1,12 +1,12 @@
 # SoPekocko
 
-1 - Présentation
+##1 - Présentation
 
 SoPekocko est un projet de la formation développeur web Openclassrooms.
 
 L'objectif est de développer la partie backend d'une application web, tout en respectant les standards de sécurité de l'OWASP. Cette application s'appelle Piquante. Elle est une application d'avis gastronomiques dans laquelle les différents utilisateurs peuvent accéder à toutes les sauces disponibles sur l'application, partager leurs sauces favorites, ou encore noter celles des autres utilisateurs.
 
-2 - Contenu du repo
+##2 - Contenu du repo
 
 Le repo contient 2 dossiers: backend et frontend.
 
@@ -21,7 +21,7 @@ Le dossier backend contient un serveur et une API. Les routes de l'API sont les 
   - PUT
   - DELETE
 
-3 - Instructions d'installation
+##3 - Instructions d'installation
 
 Pour la partie backend:
 
