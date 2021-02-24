@@ -10,7 +10,7 @@ L'objectif est de développer la partie backend d'une application web, tout en r
 
 Le repo contient 2 dossiers: backend et frontend.
 
-Le dossier frontend a été développé en amont et est disponible sur la page GitHub suivante:
+Le dossier frontend a été développé en amont, il est disponible sur la page GitHub suivante:
 
 https://github.com/OpenClassrooms-Student-Center/dwj-projet6
 
