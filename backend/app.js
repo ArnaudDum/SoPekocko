@@ -7,7 +7,13 @@ const helmet = require('helmet');
 const xssClean = require('xss-clean');
 const session = require('cookie-session');
 const expiryDate = new Date(Date.now() + 60 * 60 * 1000); // Session d'une heure
+require('dotenv').config();
+const key = process.env.KEY;
+const pw = process.env.PW;
+const db = process.env.DB;
+const dbm = process.env.DMB;
 const app = express();
+
 
 
 const Routes = require('./routes/routes.js');
@@ -15,7 +21,7 @@ const UserRoutes = require('./routes/userRoutes.js');
 
 const path = require('path');
 
-mongoose.connect('mongodb+srv://DumAr:highjump@piquantecluster.2mtl4.mongodb.net/PiquanteCluster?retryWrites=true&w=majority',
+mongoose.connect('mongodb+srv://' + key + ':' + pw + '@' + db + '.2mtl4.mongodb.net/' + dbm + '?retryWrites=true&w=majority',
   { useNewUrlParser: true,
     useUnifiedTopology: true })
   .then(() => console.log('Connexion à MongoDB réussie !'))

@@ -2,13 +2,6 @@ const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const User = require('../models/User');
 
-function validEmail(value) {
-    if(/^[A-Za-z0-9\.-]+@[a-z]+\.[a-z]{2,4}$/.test(value)) {
-        return true;
-    } else {
-        return false;
-    };
-};
 
 function validPassword(value) {
     if(/^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})/.test(value)) {
@@ -21,17 +14,22 @@ function validPassword(value) {
 
 
 exports.signup = (req, res, next) => {
-    bcrypt.hash(req.body.password, 10)
-    .then(hash => {
-        const user = new User({
-            email: req.body.email,
-            password: hash
-        });
-        user.save()
-            .then(() => res.status(201).json({message: 'Nouveau compte enregistré !'}))
-            .catch(error => res.status(400).json({error}))
-    })
-    .catch(error => res.status(500).json({error}));
+    if(validPassword(req.body.password) == true) {
+        bcrypt.hash(req.body.password, 10)
+        .then(hash => {
+            const user = new User({
+                email: req.body.email,
+                password: hash
+            });
+            user.save()
+                .then(() => res.status(201).json({message: 'Nouveau compte enregistré !'}))
+                .catch(error => res.status(400).json({error}))
+        })
+        .catch(error => res.status(500).json({error}));
+    } else {
+        res.status(400).json({message: "Mot de passe invalide. Le mot de passe doit contenir au moins 8 caractères, dont au moins: 1 lettre majuscule, 1 lettre minuscule, 1 chiffre et 1 caractère spécial."});
+    }
+    
 };
 
 exports.login = (req, res, next) => {
