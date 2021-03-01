@@ -7,6 +7,11 @@ const helmet = require('helmet');
 const xssClean = require('xss-clean');
 const session = require('cookie-session');
 const expiryDate = new Date(Date.now() + 60 * 60 * 1000); // Session d'une heure
+const rateLimit = require("express-rate-limit");
+const limiter = rateLimit({
+  windowMs: 15 * 60 * 1000,
+  max: 100
+});
 require('dotenv').config();
 const key = process.env.KEY;
 const pw = process.env.PW;
@@ -42,6 +47,7 @@ app.use(session({
     expires: expiryDate
   }
 }));
+app.use(limiter);
 
 app.use((req, res, next) => {
     res.setHeader('Access-Control-Allow-Origin', '*');
